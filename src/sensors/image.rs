@@ -120,6 +120,15 @@ macro_rules! make_image_type {
             #[serde(with = "BigArray")]
             pub data : [u8;$width*$height*$bpp],
         }
+
+        impl $resname {
+            //Set the resolution of this fixed size image type
+            pub fn set_resolution(&mut self) {
+                self.width = $width;
+                self.height = $height;
+                self.stride = $width;
+            }
+        }
     };
 }
 

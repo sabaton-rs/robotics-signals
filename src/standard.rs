@@ -4,7 +4,7 @@ use cdds_derive::Topic;
 use cyclonedds_rs::*;
 
 #[repr(C)]
-#[derive(Serialize, Deserialize, Topic)]
+#[derive(Serialize, Deserialize)]
 pub struct ColorRGBA {
     pub r : f32,
     pub g : f32,
@@ -13,9 +13,17 @@ pub struct ColorRGBA {
 }
 
 #[repr(C)]
+#[repr(C)]
+#[derive(Serialize, Deserialize)]
+pub struct Timestamp {
+    pub sec: u64,
+    pub nsec: u32,
+}
+
+#[repr(C)]
 #[derive(Serialize, Deserialize, Topic)]
 pub struct Header {
     pub seq : u32,
-    pub stamp : chrono::DateTime<Utc>,
-    pub frame : String,
+    pub stamp : Timestamp,
+    //pub frame : String,
 }
