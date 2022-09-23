@@ -16,42 +16,42 @@ BGR16
 BGRA16
 MONO8
 MONO16
-TYPE_8UC1
-TYPE_8UC2
-TYPE_8UC3
-TYPE_8UC4
-TYPE_8SC1
-TYPE_8SC2
-TYPE_8SC3
-TYPE_8SC4
-TYPE_16UC1
-TYPE_16UC2
-TYPE_16UC3
-TYPE_16UC4
-TYPE_16SC1
-TYPE_16SC2
-TYPE_16SC3
-TYPE_16SC4
-TYPE_32SC1
-TYPE_32SC2
-TYPE_32SC3
-TYPE_32SC4
-TYPE_32FC1
-TYPE_32FC2
-TYPE_32FC3
-TYPE_32FC4
-TYPE_64FC1
-TYPE_64FC2
-TYPE_64FC3
-TYPE_64FC4
-BAYER_RGGB8
-BAYER_BGGR8
-BAYER_GBRG8
-BAYER_GRBG8
-BAYER_RGGB16
-BAYER_BGGR16
-BAYER_GBRG16
-BAYER_GRBG16
+Type8UC1
+Type8UC2
+Type8UC3
+Type8UC4
+Type8SC1
+Type8SC2
+Type8SC3
+Type8SC4
+Type16UC1
+Type16UC2
+Type16UC3
+Type16UC4
+Type16SC1
+Type16SC2
+Type16SC3
+Type16SC4
+Type32SC1
+Type32SC2
+Type32SC3
+Type32SC4
+Type32FC1
+Type32FC2
+Type32FC3
+Type32FC4
+Type64FC1
+Type64FC2
+Type64FC3
+Type64FC4
+BayerRGGB8
+BayerBGGR8
+BayerGBRG8
+BayerGRBG8
+BayerRGGB16
+BayerBGGR16
+BayerGBRG16
+BayerGRBG16
 */
 
 #[repr(C)]
@@ -68,41 +68,41 @@ pub enum Encoding {
     BGRA16,
     MONO8,
     MONO16,
-    Type8uc1,
-    Type8uc2,
-    Type8uc3,
-    TYPE_8UC4,
-    TYPE_8SC1,
-    TYPE_8SC2,
-    TYPE_8SC3,
-    TYPE_8SC4,
-    TYPE_16UC1,
-    TYPE_16UC2,
-    TYPE_16UC3,
-    TYPE_16UC4,
-    TYPE_16SC1,
-    TYPE_16SC2,
-    TYPE_16SC3,
-    TYPE_16SC4,
-    TYPE_32SC1,
-    TYPE_32SC2,
-    TYPE_32SC3,
-    TYPE_32SC4,
-    TYPE_32FC1,
-    TYPE_32FC2,
-    TYPE_32FC3,
-    TYPE_32FC4,
-    TYPE_64FC1,
-    TYPE_64FC2,
-    TYPE_64FC3,
-    TYPE_64FC4,
-    BAYER_RGGB8,
-    BAYER_BGGR8,
-    BAYER_GBRG8,
-    BAYER_GRBG8,
-    BAYER_RGGB16,
-    BAYER_BGGR16,
-    BAYER_GBRG16,
+    Type8UC1,
+    Type8UC2,
+    Type8UC3,
+    Type8UC4,
+    Type8SC1,
+    Type8SC2,
+    Type8SC3,
+    Type8SC4,
+    Type16UC1,
+    Type16UC2,
+    Type16UC3,
+    Type16UC4,
+    Type16SC1,
+    Type16SC2,
+    Type16SC3,
+    Type16SC4,
+    Type32SC1,
+    Type32SC2,
+    Type32SC3,
+    Type32SC4,
+    Type32FC1,
+    Type32FC2,
+    Type32FC3,
+    Type32FC4,
+    Type64FC1,
+    Type64FC2,
+    Type64FC3,
+    Type64FC4,
+    BayerRGGB8,
+    BayerBGGR8,
+    BayerGBRG8,
+    BayerGRBG8,
+    BayerRGGB16,
+    BayerBGGR16,
+    BayerGBRG16,
     BayerGrbg16,
     YUV422,
 }
@@ -113,11 +113,11 @@ impl Encoding {
             Self::MONO16 | Self::MONO8 => 1,
             Self::BGR8 | Self::RGB8 | Self::BGR16 | Self::RGB16 => 3,
             Self::BGRA8 | Self::RGBA8 | Self::BGRA16 | Self::RGBA16 => 4,
-            Self::BAYER_RGGB8 | Self::BAYER_BGGR8 | Self::BAYER_GBRG8 | Self::BAYER_GRBG8 | Self::BAYER_RGGB16 | Self::BAYER_BGGR16 | Self::BAYER_GBRG16 | Self::BAYER_GRBG16 => 1,
-            Self::TYPE_16SC1 | Self::TYPE_16UC1 | Self::TYPE_32FC1 | Self::TYPE_32SC1 | Self::TYPE_64FC1 | Self::TYPE_8SC1 | Self::TYPE_8UC1 => 1,
-            Self::TYPE_16SC2 | Self::TYPE_16UC2 | Self::TYPE_32FC2 | Self::TYPE_32SC2 | Self::TYPE_64FC2 | Self::TYPE_8SC2 | Self::TYPE_8UC2 => 2,
-            Self::TYPE_16SC3 | Self::TYPE_16UC3 | Self::TYPE_32FC3 | Self::TYPE_32SC3 | Self::TYPE_64FC3 | Self::TYPE_8SC3 | Self::TYPE_8UC3 => 3,
-            Self::TYPE_16SC4 | Self::TYPE_16UC4 | Self::TYPE_32FC4 | Self::TYPE_32SC4 | Self::TYPE_64FC4 | Self::TYPE_8SC4 | Self::TYPE_8UC4 => 4,
+            Self::BayerRGGB8 | Self::BayerBGGR8 | Self::BayerGBRG8 | Self::BayerGRBG8 | Self::BayerRGGB16 | Self::BayerBGGR16 | Self::BayerGBRG16 | Self::BayerGrbg16 => 1,
+            Self::Type16SC1 | Self::Type16UC1 | Self::Type32FC1 | Self::Type32SC1 | Self::Type64FC1 | Self::Type8SC1 | Self::Type8UC1 => 1,
+            Self::Type16SC2 | Self::Type16UC2 | Self::Type32FC2 | Self::Type32SC2 | Self::Type64FC2 | Self::Type8SC2 | Self::Type8UC2 => 2,
+            Self::Type16SC3 | Self::Type16UC3 | Self::Type32FC3 | Self::Type32SC3 | Self::Type64FC3 | Self::Type8SC3 | Self::Type8UC3 => 3,
+            Self::Type16SC4 | Self::Type16UC4 | Self::Type32FC4 | Self::Type32SC4 | Self::Type64FC4 | Self::Type8SC4 | Self::Type8UC4 => 4,
             Self::YUV422 => 2,
             Self::Unknown => 0,
         }
@@ -142,16 +142,16 @@ impl Encoding {
     pub const fn bit_depth(&self) -> usize {
         match self {
             Self::MONO16 => 16,
-            Self::MONO8 | Self::BGR8 | Self::RGB8 | Self::BGRA8 | Self:: RGBA8 | Self::BAYER_RGGB8 | Self::BAYER_BGGR8 | Self::BAYER_GBRG8 | Self::BAYER_GRBG8 => 8,
-            Self::BGR16 | Self::RGB16 | Self::BGRA16 | Self::RGBA16 | Self::BAYER_RGGB16 | Self::BAYER_BGGR16 | Self::BAYER_GBRG16 | Self::BAYER_GRBG16 => 16,
+            Self::MONO8 | Self::BGR8 | Self::RGB8 | Self::BGRA8 | Self:: RGBA8 | Self::BayerRGGB8 | Self::BayerBGGR8 | Self::BayerGBRG8 | Self::BayerGRBG8 => 8,
+            Self::BGR16 | Self::RGB16 | Self::BGRA16 | Self::RGBA16 | Self::BayerRGGB16 | Self::BayerBGGR16 | Self::BayerGBRG16 | Self::BayerGrbg16 => 16,
             Self::YUV422 => 8,
-            Self::TYPE_16SC1 | Self::TYPE_16SC2 | Self::TYPE_16SC3 | Self::TYPE_16SC4 => 16,
-            Self::TYPE_16UC1 | Self::TYPE_16UC2 | Self::TYPE_16UC3 | Self::TYPE_16UC4 => 16,
-            Self::TYPE_32SC1 | Self::TYPE_32SC2 | Self::TYPE_32SC3 | Self::TYPE_32SC4 => 32,
-            Self::TYPE_32FC1 | Self::TYPE_32FC2 | Self::TYPE_32FC3 | Self::TYPE_32FC4 => 32,
-            Self::TYPE_64FC1 | Self::TYPE_64FC2 | Self::TYPE_64FC3 | Self::TYPE_64FC4 => 64,
-            Self::TYPE_8SC1 | Self::TYPE_8SC2 | Self::TYPE_8SC3 | Self::TYPE_8SC4 => 8,
-            Self::TYPE_8UC1 | Self::TYPE_8UC2 | Self::TYPE_8UC3 | Self::TYPE_8UC4 => 8,
+            Self::Type16SC1 | Self::Type16SC2 | Self::Type16SC3 | Self::Type16SC4 => 16,
+            Self::Type16UC1 | Self::Type16UC2 | Self::Type16UC3 | Self::Type16UC4 => 16,
+            Self::Type32SC1 | Self::Type32SC2 | Self::Type32SC3 | Self::Type32SC4 => 32,
+            Self::Type32FC1 | Self::Type32FC2 | Self::Type32FC3 | Self::Type32FC4 => 32,
+            Self::Type64FC1 | Self::Type64FC2 | Self::Type64FC3 | Self::Type64FC4 => 64,
+            Self::Type8SC1 | Self::Type8SC2 | Self::Type8SC3 | Self::Type8SC4 => 8,
+            Self::Type8UC1 | Self::Type8UC2 | Self::Type8UC3 | Self::Type8UC4 => 8,
             Self::Unknown => 0,
          }
     }
