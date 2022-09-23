@@ -197,3 +197,4 @@ make_image_type!(ImageQCIF4BPP,176,120,Encoding::RGBA8);
 make_image_type!(ImageCIF4BPP,352,240,Encoding::RGBA8);
 make_image_type!(Image3MP4BPP,2048,1536,Encoding::RGBA8);
 make_image_type!(Image1080p4BPP,1920,1080,Encoding::RGBA8);
+make_image_type!(Image1080pYUV422,1920,1080,Encoding::YUV422);
