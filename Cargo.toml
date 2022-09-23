@@ -1,12 +1,16 @@
 [package]
-name = "ros_signals"
+name = "robotics-signals"
 version = "0.1.0"
 edition = "2021"
+authors = ["Sojan James <Sojan.James@gmail.com>"]
+description = "Types for Robotics Signals for use with CycloneDDS-rs"
+license-file = "LICENSE"
+homepage = "https://github.com/sjames/robotics-signals"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-cyclonedds-rs = "0.5"
+cyclonedds-rs = "0.6"
 cdds_derive = "0.1.1"
 serde = "1.0"
 serde_derive = "1.0"

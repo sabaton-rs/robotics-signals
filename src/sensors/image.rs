@@ -68,9 +68,9 @@ pub enum Encoding {
     BGRA16,
     MONO8,
     MONO16,
-    TYPE_8UC1,
-    TYPE_8UC2,
-    TYPE_8UC3,
+    Type8uc1,
+    Type8uc2,
+    Type8uc3,
     TYPE_8UC4,
     TYPE_8SC1,
     TYPE_8SC2,
@@ -103,7 +103,7 @@ pub enum Encoding {
     BAYER_RGGB16,
     BAYER_BGGR16,
     BAYER_GBRG16,
-    BAYER_GRBG16,
+    BayerGrbg16,
     YUV422,
 }
 
