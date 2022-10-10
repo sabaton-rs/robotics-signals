@@ -25,6 +25,7 @@ pub struct Timestamp {
 pub struct Header {
     pub seq : u32,
     pub stamp : Timestamp,
+    #[topic_key]
     pub frame : String,
 }
 
