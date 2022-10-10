@@ -1,6 +1,6 @@
 [package]
 name = "robotics-signals"
-version = "0.1.1"
+version = "0.2.0"
 edition = "2021"
 authors = ["Sojan James <Sojan.James@gmail.com>"]
 description = "Types for Robotics Signals for use with CycloneDDS-rs"

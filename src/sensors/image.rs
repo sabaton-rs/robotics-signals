@@ -1,4 +1,4 @@
-use crate::standard::Header;
+use crate::standard::HeaderFixedSize;
 use serde_derive::{Deserialize, Serialize};
 
 use serde_big_array::BigArray;
@@ -164,7 +164,7 @@ macro_rules! make_image_type {
     #[repr(C)]
     #[derive(Serialize, Deserialize, TopicFixedSize)]
         pub struct $resname {
-            pub header: Header,
+            pub header: HeaderFixedSize,
             pub width: u32,
             pub height: u32,
             pub encoding : Encoding,

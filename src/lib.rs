@@ -1,6 +1,7 @@
 pub mod standard;
 pub mod geometry;
 pub mod sensors;
+pub mod navigation;
 
 #[cfg(test)]
 mod tests {

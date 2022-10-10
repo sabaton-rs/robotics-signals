@@ -126,6 +126,39 @@ pub struct Pose {
     pub orientation : Quarternion,
 }
 
+/// This represents a pose in free space with uncertainty.A representation of pose in free space, composed of position and orientation. 
+#[repr(C)]
+#[derive(Serialize, Deserialize)]
+pub struct PoseWithCovariance {
+    pub pose : Pose,
+
+    /// Row-major representation of the 6x6 covariance matrix
+    /// The orientation parameters use a fixed-axis representation.
+    /// In order, the parameters are:
+    /// (x, y, z, rotation about X axis, rotation about Y axis, rotation about Z axis)
+    pub covariance : [[f64;6];6]
+}
+
+#[repr(C)]
+#[derive(Serialize, Deserialize)]
+pub struct PoseStamped {
+    pub header : Header,
+    pub pose : Pose,
+}
+
+#[repr(C)]
+#[derive(Serialize, Deserialize, Topic)]
+pub struct PoseWithCovarianceStamped {
+    pub header : Header,
+    pub pose : Pose,
+
+    /// Row-major representation of the 6x6 covariance matrix
+    /// The orientation parameters use a fixed-axis representation.
+    /// In order, the parameters are:
+    /// (x, y, z, rotation about X axis, rotation about Y axis, rotation about Z axis)
+    pub covariance : [[f64;6];6]
+}
+
 /// This represents the transform between two coordinate frames in free space.
 #[repr(C)]
 #[derive(Serialize, Deserialize)]

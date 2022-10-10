@@ -25,5 +25,13 @@ pub struct Timestamp {
 pub struct Header {
     pub seq : u32,
     pub stamp : Timestamp,
-    //pub frame : String,
+    pub frame : String,
+}
+
+#[repr(C)]
+#[derive(Serialize, Deserialize, Topic)]
+pub struct HeaderFixedSize {
+    pub seq : u32,
+    pub stamp : Timestamp,
+    pub frame : u64,
 }
