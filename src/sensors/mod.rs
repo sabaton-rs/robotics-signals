@@ -12,3 +12,4 @@ pub mod magnetic_field;
 pub mod multi_dof_joint_state;
 pub mod nav_sat_fix;
 pub mod point_cloud;
+pub mod range;
