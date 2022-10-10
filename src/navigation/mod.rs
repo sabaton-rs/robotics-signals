@@ -1,4 +1,4 @@
-use crate::{standard::{Header, Timestamp}, geometry::{Point, Pose, PoseWithCovariance, TwistWithCovariance, PoseWithCovarianceStamped, PoseStamped}};
+use crate::{standard::{Header, Timestamp}, geometry::{Point, Pose, PoseWithCovariance, TwistWithCovariance,  PoseStamped}};
 use serde_derive::{Deserialize, Serialize};
 use cdds_derive::*;
 use cyclonedds_rs::*;

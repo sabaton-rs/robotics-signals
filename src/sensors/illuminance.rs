@@ -18,7 +18,7 @@ use crate::standard::Header;
 ///  - Irradiance (watt/area), etc.
 
 #[repr(C)]
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize,Topic)]
 pub struct Illuminance {
     /// frame_id is the location and direction of the reading
     pub header : Header,
