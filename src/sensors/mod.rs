@@ -15,3 +15,4 @@ pub mod point_cloud;
 pub mod range;
 pub mod relative_humidity;
 pub mod temperature;
+pub mod time_reference;
