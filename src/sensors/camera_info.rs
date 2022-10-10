@@ -1,7 +1,7 @@
-use serde_derive::{Deserialize, Serialize};
+use crate::standard::Header;
 use cdds_derive::*;
 use cyclonedds_rs::*;
-use crate::standard::Header;
+use serde_derive::{Deserialize, Serialize};
 
 #[repr(C)]
 #[derive(Serialize, Deserialize)]
@@ -21,19 +21,19 @@ pub enum DistortionModel {
 pub struct RegionOfInterest {
     /// Leftmost pixel of the ROI
     /// (0 if the ROI includes the left edge of the image)
-    pub x_offset : u32, 
+    pub x_offset: u32,
 
     /// Topmost pixel of the ROI
     /// (0 if the ROI includes the top edge of the image)
-    pub y_offset : u32,
-    pub height : u32,
-    pub width : u32,
+    pub y_offset: u32,
+    pub height: u32,
+    pub width: u32,
 
     /// True if a distinct rectified ROI should be calculated from the "raw"
     /// ROI in this message. Typically this should be False if the full image
     /// is captured (ROI not used), and True if a subwindow is captured (ROI
     /// used).
-    pub do_rectify : bool,
+    pub do_rectify: bool,
 }
 
 /// # Header timestamp should be acquisition time of image
@@ -43,21 +43,21 @@ pub struct RegionOfInterest {
 /// +y should point down in the image
 /// +z should point into the plane of the image
 #[repr(C)]
-#[derive(Serialize, Deserialize,Topic)]
+#[derive(Serialize, Deserialize, Topic)]
 pub struct CameraInfo {
-    /// 
-    pub header : Header,
+    ///
+    pub header: Header,
 
     // Calibration parameters of the camera
     /// Calibrated width
-    pub height : u32,
+    pub height: u32,
     /// Calibrated height
-    pub width : u32,
+    pub width: u32,
 
-    pub distortion_model : DistortionModel,
+    pub distortion_model: DistortionModel,
 
     /// distortion parameters
-    pub d : Vec<f64>,
+    pub d: Vec<f64>,
 
     /// Intrinsic camera matrix for the raw images.
     /// [ fx 0  cx ]
@@ -66,13 +66,13 @@ pub struct CameraInfo {
     /// Projectd 3D points in the camera coordinate frame
     /// to 2D pixel coordinates using the focal lengths (fx,fy)
     /// and principal point (cx, cy)
-    pub k : [f64;9],
+    pub k: [f64; 9],
 
     /// Rectification matrix for stereo cameras
     /// A rotation matrix aligning the camera coordinate
-    /// system to the ideal stereo image plane so that 
+    /// system to the ideal stereo image plane so that
     /// epipolar lines in both stereo images are parallel
-    pub r : [f64;9],
+    pub r: [f64; 9],
 
     /// # Projection/camera matrix
     //     [fx'  0  cx' Tx]
@@ -98,7 +98,7 @@ pub struct CameraInfo {
     //         x = u / w
     //         y = v / w
     //  This holds for both images of a stereo pair.
-    pub p : [ f64;12],
+    pub p: [f64; 12],
 
     // Binning refers here to any camera setting which combines rectangular
     //  neighborhoods of pixels into larger "super-pixels." It reduces the
@@ -106,8 +106,8 @@ pub struct CameraInfo {
     //  (width / binning_x) x (height / binning_y).
     // The default values binning_x = binning_y = 0 is considered the same
     //  as binning_x = binning_y = 1 (no subsampling).
-    pub binning_x : u32,
-    pub binning_y : u32,
+    pub binning_x: u32,
+    pub binning_y: u32,
 
     /// Region of interest (subwindow of full camera resolution), given in
     ///  full resolution (unbinned) image coordinates. A particular ROI
@@ -115,7 +115,5 @@ pub struct CameraInfo {
     ///  regardless of binning settings.
     /// The default setting of roi (all values 0) is considered the same as
     ///  full resolution (roi.width = width, roi.height = height).
-    pub roi : RegionOfInterest,
-
-
+    pub roi: RegionOfInterest,
 }

@@ -1,24 +1,25 @@
-use serde_derive::{Deserialize, Serialize};
+use crate::{
+    geometry::{Quarternion, Vector3},
+    standard::Header,
+};
 use cdds_derive::*;
 use cyclonedds_rs::*;
-use crate::{standard::Header, geometry::{Quarternion, Vector3}};
-
+use serde_derive::{Deserialize, Serialize};
 
 #[repr(C)]
-#[derive(Serialize, Deserialize,Topic)]
+#[derive(Serialize, Deserialize, Topic)]
 pub struct Imu {
-    pub header : Header,
-    
-    pub orientation : Quarternion,
+    pub header: Header,
+
+    pub orientation: Quarternion,
     /// Row major about x, y, z axes
-    pub orientation_covariance : [f64;9],
+    pub orientation_covariance: [f64; 9],
 
-    pub angular_velocity : Vector3,
+    pub angular_velocity: Vector3,
     ///  Row major about x, y, z axes
-    pub angular_velocity_covariance : [f64;9],
+    pub angular_velocity_covariance: [f64; 9],
 
-    pub linear_acceleration : Vector3,
+    pub linear_acceleration: Vector3,
     /// Row major x, y z
-    pub linear_acceleration_covariance : [f64;9],
-
+    pub linear_acceleration_covariance: [f64; 9],
 }

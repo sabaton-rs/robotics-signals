@@ -1,15 +1,15 @@
-use serde_derive::{Deserialize, Serialize};
+use crate::standard::Header;
 use cdds_derive::*;
 use cyclonedds_rs::*;
-use crate::standard::Header;
+use serde_derive::{Deserialize, Serialize};
 
 #[repr(C)]
-#[derive(Serialize, Deserialize,Topic)]
+#[derive(Serialize, Deserialize, Topic)]
 pub struct FluidPressure {
     /// frame_id is the location of the pressure sensor
-    pub header : Header,
+    pub header: Header,
     /// Absolute pressure reading in Pascals.
-    pub fluid_pressure : f64,
+    pub fluid_pressure: f64,
     /// 0 is interpreted as variance unknown
-    pub variance : f64, 
+    pub variance: f64,
 }

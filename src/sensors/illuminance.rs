@@ -1,7 +1,7 @@
-use serde_derive::{Deserialize, Serialize};
+use crate::standard::Header;
 use cdds_derive::*;
 use cyclonedds_rs::*;
-use crate::standard::Header;
+use serde_derive::{Deserialize, Serialize};
 
 /// Single photometric illuminance measurement.  Light should be assumed to be
 /// measured along the sensor's x-axis (the area of detection is the y-z plane).
@@ -18,12 +18,12 @@ use crate::standard::Header;
 ///  - Irradiance (watt/area), etc.
 
 #[repr(C)]
-#[derive(Serialize, Deserialize,Topic)]
+#[derive(Serialize, Deserialize, Topic)]
 pub struct Illuminance {
     /// frame_id is the location and direction of the reading
-    pub header : Header,
+    pub header: Header,
     /// Measurement of the Photometric Illuminance in Lux.
-    pub illuminance : f64,
+    pub illuminance: f64,
     ///  0 is interpreted as variance unknown
-    pub variance : f64,
+    pub variance: f64,
 }

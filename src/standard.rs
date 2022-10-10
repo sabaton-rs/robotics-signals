@@ -1,14 +1,14 @@
-use serde_derive::{Deserialize, Serialize};
 use cdds_derive::Topic;
 use cyclonedds_rs::*;
+use serde_derive::{Deserialize, Serialize};
 
 #[repr(C)]
 #[derive(Serialize, Deserialize)]
 pub struct ColorRGBA {
-    pub r : f32,
-    pub g : f32,
-    pub b : f32,
-    pub a : f32, 
+    pub r: f32,
+    pub g: f32,
+    pub b: f32,
+    pub a: f32,
 }
 
 #[repr(C)]
@@ -22,15 +22,15 @@ pub struct Timestamp {
 #[repr(C)]
 #[derive(Serialize, Deserialize, Topic)]
 pub struct Header {
-    pub seq : u32,
-    pub stamp : Timestamp,
-    pub frame : String,
+    pub seq: u32,
+    pub stamp: Timestamp,
+    pub frame: String,
 }
 
 #[repr(C)]
 #[derive(Serialize, Deserialize, Topic)]
 pub struct HeaderFixedSize {
-    pub seq : u32,
-    pub stamp : Timestamp,
-    pub frame : u64,
+    pub seq: u32,
+    pub stamp: Timestamp,
+    pub frame: u64,
 }

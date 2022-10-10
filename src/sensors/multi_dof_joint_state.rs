@@ -1,8 +1,11 @@
-use serde_derive::{Deserialize, Serialize};
 use cdds_derive::*;
 use cyclonedds_rs::*;
+use serde_derive::{Deserialize, Serialize};
 
-use crate::{standard::Header, geometry::{Transform, Twist, Wrench}};
+use crate::{
+    geometry::{Transform, Twist, Wrench},
+    standard::Header,
+};
 
 /// Representation of state for joints with multiple degrees of freedom,
 /// following the structure of JointState which can only represent a single degree of freedom.
@@ -25,11 +28,11 @@ use crate::{standard::Header, geometry::{Transform, Twist, Wrench}};
 /// states.
 
 #[repr(C)]
-#[derive(Serialize, Deserialize,Topic)]
+#[derive(Serialize, Deserialize, Topic)]
 pub struct MultiDOFJointState {
-    pub header : Header,
-    pub joint_names : Vec<String>,
-    pub transforms : Vec<Transform>,
-    pub twist : Vec<Twist>,
-    pub wrench : Vec<Wrench>,   
+    pub header: Header,
+    pub joint_names: Vec<String>,
+    pub transforms: Vec<Transform>,
+    pub twist: Vec<Twist>,
+    pub wrench: Vec<Wrench>,
 }
