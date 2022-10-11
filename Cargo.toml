@@ -1,11 +1,11 @@
 [package]
 name = "robotics-signals"
-version = "0.2.0"
+version = "0.2.1"
 edition = "2021"
 authors = ["Sojan James <Sojan.James@gmail.com>"]
 description = "Types for Robotics Signals for use with CycloneDDS-rs. The types are derived mostly from ROS2"
 license-file = "LICENSE.md"
-homepage = "https://github.com/sjames/robotics-signals"
+homepage = "https://github.com/sabaton-rs/robotics-signals"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
